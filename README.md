@@ -73,7 +73,7 @@ int swWidth = (int) (Math.floor(Math.min((mRealSizeHeight / density), (mRealSize
 
 2. 右击->```ScreenMath```选择对应Module即可
 
-## drawable适配
+## drawable适配(为某个分辨率的设备做图片适配)
 
 命名格式
 ```drawable-hdpi-1223x800```、```drawable-hdpi-1280x736```
@@ -95,4 +95,4 @@ python dimens.py
 ![python shell](https://github.com/mzyq/ScreenMath/blob/bb4cccb4077ef8a536ed6e7de34466cb43ff14c2/img/shell.png)
 
 ## 适配目录结构
-![img](https://github.com/mzyq/ScreenMath/blob/7faacacebcd3942049ec995183405b46570ad2cb/img/dir.png)
+![img](https://github.com/mzyq/ScreenMath/blob/39aff0d8170e2be20e2733cff9ef4da3038d7471/img/dirs.png)
