@@ -63,7 +63,7 @@ int mRealSizeHeight;//手机屏幕真实高度
 mRealSizeHeight = outPoint.y;
 mRealSizeWidth = outPoint.x;
 
-Math.min((mRealSizeHeight / density), (mRealSizeWidth / density));//sw
+int swWidth = (int) (Math.floor(Math.min((mRealSizeHeight / density), (mRealSizeWidth / density))));//sw
 ```
 
 ## values适配
@@ -83,7 +83,7 @@ Math.min((mRealSizeHeight / density), (mRealSizeWidth / density));//sw
 DisplayMetrics dm = getResources().getDisplayMetrics();
 int heightPixels = dm.heightPixels;
 int widthPixels = dm.widthPixels;
-heightPixels + "x" + widthPixels
+String dimens = heightPixels + "x" + widthPixels;
 ```
 
 ## python获取屏幕参数脚本[windows适用][python3.6]
