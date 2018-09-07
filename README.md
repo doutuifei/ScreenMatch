@@ -85,3 +85,10 @@ int heightPixels = dm.heightPixels;
 int widthPixels = dm.widthPixels;
 heightPixels + "x" + widthPixels
 ```
+
+## python获取屏幕参数脚本
+![python shell](https://github.com/mzyq/ScreenMath/blob/bb4cccb4077ef8a536ed6e7de34466cb43ff14c2/img/shell.png)
+
+```
+python dimens.py
+```
