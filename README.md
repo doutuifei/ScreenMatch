@@ -86,7 +86,7 @@ int widthPixels = dm.widthPixels;
 heightPixels + "x" + widthPixels
 ```
 
-## python获取屏幕参数脚本
+## python获取屏幕参数脚本[windows适用]
 > 必须配置```adb```命令，且连接设备。```adb devices```能获取设备信息才可以使用！
 
 ```
