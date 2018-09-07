@@ -31,8 +31,8 @@ if (Build.VERSION.SDK_INT >= 19) {
     // 不可能有虚拟按键
     display.getSize(outPoint);
 }
-int mRealSizeWidth;//手机屏幕真实宽度
-int mRealSizeHeight;//手机屏幕真实高度
+int mRealSizeWidth = outPoint.x;//手机屏幕真实宽度
+int mRealSizeHeight = outPoint.y;//手机屏幕真实高度
 ```
 
 ## 基准图计算 base_dp
@@ -86,7 +86,7 @@ int widthPixels = dm.widthPixels;
 heightPixels + "x" + widthPixels
 ```
 
-## python获取屏幕参数脚本[windows适用]
+## python获取屏幕参数脚本[windows适用][python3.6]
 > 必须配置```adb```命令，且连接设备。```adb devices```能获取设备信息才可以使用！
 
 ```
