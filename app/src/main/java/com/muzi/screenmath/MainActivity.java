@@ -33,11 +33,56 @@ public class MainActivity extends AppCompatActivity {
         float scaledDensity = dm.scaledDensity;
         int heightPixels = dm.heightPixels;
         int widthPixels = dm.widthPixels;
-        float widthDP = widthPixels / density;
-        float heightDP = heightPixels / density;
 
-        WindowManager windowManager =
-                (WindowManager) getApplication().getSystemService(Context.WINDOW_SERVICE);
+
+        text.append("density:" + density + '\n');
+        text.append("densityDpi:" + densityDpi + '\n');
+        text.append("scaledDensity:" + scaledDensity + '\n');
+        text.append("heightPixels:" + heightPixels + '\n');
+        text.append("widthPixels:" + widthPixels + '\n');
+        text.append("100dp:" + getResources().getDimension(R.dimen.dp100) + "\n");
+        text.append("100/" + density + "dp:" + (getResources().getDimension(R.dimen.dp100) / density) + "dp\n");
+        text.append("\n");
+
+        /**
+         * 屏幕真实尺寸
+         */
+        int mRealSizeWidth = getRealSize().x;//手机屏幕真实宽度
+        int mRealSizeHeight = getRealSize().y;//手机屏幕真实高度
+        text.append("RealSizeHeight:" + mRealSizeHeight + "\n");
+        text.append("RealSizeWidth:" + mRealSizeWidth + "\n");
+        text.append("\n");
+
+        /**
+         * value适配-swxxxdp
+         */
+        int swWidth = (int) (Math.floor(Math.min((mRealSizeHeight / density), (mRealSizeWidth / density))));
+        text.append("sw:values-" + swWidth + "dp\n");
+
+
+        /**
+         * drawable分辨率适配
+         */
+        String drawable = null;
+        if (densityDpi <= 120) {
+            drawable = "drawable-ldpi-";
+        } else if (densityDpi > 120 && densityDpi <= 160) {
+            drawable = "drawable-mdpi-";
+        } else if (densityDpi > 160 && density <= 240) {
+            drawable = "drawable-hdpi-";
+        } else if (densityDpi > 240 && density <= 320) {
+            drawable = "drawable-xdpi-";
+        } else if (densityDpi > 320 && density <= 480) {
+            drawable = "drawable-xxdpi-";
+        } else if (densityDpi > 480 && density <= 640) {
+            drawable = "drawable-xxxdpi-";
+        }
+        text.append("pixel:" + drawable + widthPixels + "x" + heightPixels);
+    }
+
+
+    private Point getRealSize() {
+        WindowManager windowManager = (WindowManager) getApplication().getSystemService(Context.WINDOW_SERVICE);
         final Display display = windowManager.getDefaultDisplay();
         Point outPoint = new Point();
         if (Build.VERSION.SDK_INT >= 19) {
@@ -47,27 +92,7 @@ public class MainActivity extends AppCompatActivity {
             // 不可能有虚拟按键
             display.getSize(outPoint);
         }
-        int mRealSizeWidth;//手机屏幕真实宽度
-        int mRealSizeHeight;//手机屏幕真实高度
-        mRealSizeHeight = outPoint.y;
-        mRealSizeWidth = outPoint.x;
-
-        text.append("density:" + density + '\n');
-        text.append("densityDpi:" + densityDpi + '\n');
-        text.append("scaledDensity:" + scaledDensity + '\n');
-        text.append("heightPixels:" + heightPixels + '\n');
-        text.append("widthPixels:" + widthPixels + '\n');
-        text.append("widthDP:" + widthDP + '\n');
-        text.append("heightDP:" + heightDP + '\n');
-        text.append("100dp:" + getResources().getDimension(R.dimen.dp100) + "\n");
-        text.append("100/" + density + "dp:" + (getResources().getDimension(R.dimen.dp100) / density) + "dp\n");
-
-        text.append("\n");
-        text.append("RealSizeHeight:" + mRealSizeHeight + "\n");
-        text.append("RealSizeWidth:" + mRealSizeWidth + "\n");
-        text.append("\n");
-        text.append("sw:" + Math.min((mRealSizeHeight / density), (mRealSizeWidth / density)) + "\n");
-        text.append("pixel:" + heightPixels + "x" + widthPixels);
+        return outPoint;
     }
 
 }
