@@ -87,8 +87,12 @@ heightPixels + "x" + widthPixels
 ```
 
 ## python获取屏幕参数脚本
-![python shell](https://github.com/mzyq/ScreenMath/blob/bb4cccb4077ef8a536ed6e7de34466cb43ff14c2/img/shell.png)
+> 必须配置```adb```命令，且连接设备。```adb devices```能获取设备信息才可以使用！
 
 ```
 python dimens.py
 ```
+![python shell](https://github.com/mzyq/ScreenMath/blob/bb4cccb4077ef8a536ed6e7de34466cb43ff14c2/img/shell.png)
+
+## 适配目录结构
+![img](https://github.com/mzyq/ScreenMath/blob/7faacacebcd3942049ec995183405b46570ad2cb/img/dir.png)
