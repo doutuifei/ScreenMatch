@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         text.append("scaledDensity:" + scaledDensity + '\n');
         text.append("heightPixels:" + heightPixels + '\n');
         text.append("widthPixels:" + widthPixels + '\n');
-        text.append("100dp:" + getResources().getDimension(R.dimen.dp100) + "\n");
-        text.append("100/" + density + "dp:" + (getResources().getDimension(R.dimen.dp100) / density) + "dp\n");
+        text.append("100dp:" + getResources().getDimension(R.dimen.dp_100) + "\n");
+        text.append("100/" + density + "dp:" + (getResources().getDimension(R.dimen.dp_100) / density) + "dp\n");
         text.append("\n");
 
         /**
