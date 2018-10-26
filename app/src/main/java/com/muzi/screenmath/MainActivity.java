@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
             drawable = "drawable-xxxdpi-";
         }
         text.append("pixel:" + drawable + widthPixels + "x" + heightPixels);
+
     }
 
 
